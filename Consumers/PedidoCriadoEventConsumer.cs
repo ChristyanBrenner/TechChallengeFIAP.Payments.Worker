@@ -16,22 +16,15 @@ namespace Consumers
         {
             var pedido = context.Message;
 
-            //Console.WriteLine("💳 Processando pagamento...");
-            //Console.WriteLine($"Pedido: {pedido.Id} | Usuário: {pedido.UserId} | Jogo: {pedido.GameId}");
-
-            // 🔥 SIMULA pagamento
             var aprovado = SimularPagamento(pedido.Price);
 
             await _publishEndpoint.Publish(new PaymentProcessedEvent(
                 pedido.UserId,
                 pedido.GameId,
                 pedido.GameName,
+                pedido.Price,
                 aprovado ? PaymentStatus.Approved : PaymentStatus.Rejected
             ));
-
-            //Console.WriteLine(aprovado
-            //    ? "✅ Pagamento aprovado"
-            //    : "❌ Pagamento rejeitado");
         }
 
         private bool SimularPagamento(decimal valor)
