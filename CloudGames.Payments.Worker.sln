@@ -3,11 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34322.80
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudGames.Payments.Worker", "CloudGames.Payments.Worker\CloudGames.Payments.Worker.csproj", "{50A744AE-F430-4169-B227-E9721D24D502}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CloudGames.Payments.Worker", "CloudGames.Payments.Worker\CloudGames.Payments.Worker.csproj", "{50A744AE-F430-4169-B227-E9721D24D502}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Consumers", "Consumers\Consumers.csproj", "{B25712BC-8D4E-4990-BC22-F3065F67E289}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Consumers", "Consumers\Consumers.csproj", "{B25712BC-8D4E-4990-BC22-F3065F67E289}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CloudGames.Contracts", "..\CloudGames.Contracts\CloudGames.Contracts\CloudGames.Contracts.csproj", "{B01C2F26-4FE3-4FCA-A236-D7693971EA47}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "k8s", "k8s", "{A9103231-135A-49AF-BAF6-B7D6AF229D34}"
+	ProjectSection(SolutionItems) = preProject
+		configmap.yml = configmap.yml
+		deployment.yml = deployment.yml
+		secret.yml = secret.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
