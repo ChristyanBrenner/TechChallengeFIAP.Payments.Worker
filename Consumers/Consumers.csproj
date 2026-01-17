@@ -12,7 +12,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\CloudGames.Contracts\CloudGames.Contracts\CloudGames.Contracts.csproj" />
+    <ProjectReference Include="..\..\TechChallengeFIAP.Contracts\CloudGames.Contracts\CloudGames.Contracts.csproj" />
+
   </ItemGroup>
 
 </Project>
