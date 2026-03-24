@@ -1,23 +1,10 @@
-using Consumers;
-using MassTransit;
+using CloudGames.Payments.Worker;
+using Services;
 
 var builder = Host.CreateApplicationBuilder(args);
 
-builder.Services.AddMassTransit(x =>
-{
-    x.AddConsumer<PedidoCriadoEventConsumer>();
-
-    x.UsingRabbitMq((context, cfg) =>
-    {
-        cfg.Host("localhost", "/", h =>
-        {
-            h.Username("guest");
-            h.Password("guest");
-        });
-
-        cfg.ConfigureEndpoints(context);
-    });
-});
+builder.Services.AddSingleton<SqsService>();
+builder.Services.AddHostedService<Worker>();
 
 var host = builder.Build();
 host.Run();
